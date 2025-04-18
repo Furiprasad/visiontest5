@@ -1,7 +1,7 @@
-
 import React, { useEffect } from 'react';
 import MainLayout from '../layouts/MainLayout';
 import { useNavigate } from 'react-router-dom';
+import TimelineSection from '@/components/TimelineSection';
 
 const About: React.FC = () => {
   const navigate = useNavigate();
@@ -56,7 +56,7 @@ const About: React.FC = () => {
             </div>
             <div className="reveal-on-scroll">
               <img 
-                src="/lovable-uploads/0117bda7-81b6-4e64-9372-e67e72e4284f.png" 
+                src="/lovable-uploads/5ec724e0-ff8f-48ec-812e-c9edc3d2e7b9.png" 
                 alt="About Vision Developers" 
                 className="rounded-lg shadow-lg w-full h-auto"
               />
@@ -70,51 +70,23 @@ const About: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md reveal-on-scroll">
-              <h3 className="text-xl font-semibold mb-3 font-poppins">Quality</h3>
-              <p className="text-gray-700">
-                We are unwavering in our commitment to quality, using only the finest materials and adhering to the highest standards in every phase of construction.
-              </p>
+          {/* Team Section - Modified */}
+          <section className="section-padding bg-gray-50">
+            <div className="container mx-auto">
+              <h2 className="text-3xl font-bold mb-12 font-poppins text-center reveal-on-scroll">Our Leadership</h2>
+              
+              <div className="flex justify-center">
+                <div className="text-center reveal-on-scroll">
+                  <div className="w-48 h-48 rounded-full bg-gray-300 mx-auto mb-4"></div>
+                  <h3 className="text-xl font-semibold font-poppins">Sri Suresh Madineni</h3>
+                  <p className="text-gray-600">Founder & CEO</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md reveal-on-scroll" style={{ transitionDelay: '100ms' }}>
-              <h3 className="text-xl font-semibold mb-3 font-poppins">Innovation</h3>
-              <p className="text-gray-700">
-                We embrace innovative approaches and technologies to create architectural designs that are both aesthetically pleasing and functionally superior.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md reveal-on-scroll" style={{ transitionDelay: '200ms' }}>
-              <h3 className="text-xl font-semibold mb-3 font-poppins">Trust</h3>
-              <p className="text-gray-700">
-                We build relationships based on trust and transparency, ensuring that our clients feel confident and secure throughout the construction process.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* Team Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-12 font-poppins text-center reveal-on-scroll">Our Leadership</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center reveal-on-scroll">
-              <div className="w-48 h-48 rounded-full bg-gray-300 mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold font-poppins">Sri Suresh Madineni</h3>
-              <p className="text-gray-600">Founder & CEO</p>
-            </div>
-            <div className="text-center reveal-on-scroll" style={{ transitionDelay: '100ms' }}>
-              <div className="w-48 h-48 rounded-full bg-gray-300 mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold font-poppins">Rajesh Kumar</h3>
-              <p className="text-gray-600">Chief Architect</p>
-            </div>
-            <div className="text-center reveal-on-scroll" style={{ transitionDelay: '200ms' }}>
-              <div className="w-48 h-48 rounded-full bg-gray-300 mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold font-poppins">Priya Sharma</h3>
-              <p className="text-gray-600">Project Director</p>
-            </div>
-          </div>
+          {/* Timeline Section */}
+          <TimelineSection />
         </div>
       </section>
     </MainLayout>

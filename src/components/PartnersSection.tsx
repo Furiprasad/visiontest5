@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 
 const PartnersSection: React.FC = () => {
@@ -33,6 +34,14 @@ const PartnersSection: React.FC = () => {
     {
       name: "Vodafone",
       logo: "/lovable-uploads/ff5ee40c-6378-4db1-a9ea-ed04768ba68f.png"
+    },
+    {
+      name: "Tata",
+      logo: "/lovable-uploads/2f5da14f-8b8e-4555-9df6-cc15b995eefd.png"
+    },
+    {
+      name: "Indus Towers",
+      logo: "/lovable-uploads/5f175ff3-cc6f-4081-b6b5-9e125ac9a73d.png"
     }
   ];
 
@@ -56,7 +65,7 @@ const PartnersSection: React.FC = () => {
               <img 
                 src={partner.logo} 
                 alt={partner.name} 
-                className="partner-logo max-h-16 md:max-h-20 w-auto object-contain"
+                className="partner-logo max-h-24 md:max-h-28 w-auto object-contain"
               />
             </div>
           ))}
