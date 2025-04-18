@@ -37,7 +37,7 @@ const AboutSection: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div className="reveal-on-scroll">
-            <img src="/lovable-uploads/de3e986a-4aaf-4274-a9c0-71292e9d15a4.png" alt="About Vision Developers" className="rounded-lg shadow-lg w-full h-auto object-fill" />
+            <img src="/lovable-uploads/de3e986a-4aaf-4274-a9c0-71292e9d15a4.png" alt="About Vision Developers" className="rounded-lg shadow-lg w-full h-auto object-scale-down" />
           </div>
           <div className="reveal-on-scroll space-y-8">
             <p className="text-lg md:text-xl lg:text-2xl text-gray-700">
