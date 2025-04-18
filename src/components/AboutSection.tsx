@@ -1,33 +1,25 @@
-
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-
 const AboutSection: React.FC = () => {
   const navigate = useNavigate();
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     const elements = document.querySelectorAll('.reveal-on-scroll');
-    elements.forEach((el) => observer.observe(el));
-
+    elements.forEach(el => observer.observe(el));
     return () => {
-      elements.forEach((el) => observer.unobserve(el));
+      elements.forEach(el => observer.unobserve(el));
     };
   }, []);
-
-  return (
-    <section className="section-padding bg-white">
+  return <section className="section-padding bg-white">
       <div className="container mx-auto max-w-7xl">
         <div className="mb-20">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 font-poppins text-center reveal-on-scroll">
@@ -37,11 +29,7 @@ const AboutSection: React.FC = () => {
             <p className="text-lg md:text-xl lg:text-2xl text-gray-700 mb-10 reveal-on-scroll">
               Vision Developers, formerly known as Aditya Technocrats, brings decades of experience in infrastructure to the modern and luxurious residential segment. Led by the visionary Sri Suresh Madineni, we've transformed, driven by a passion for creating exceptional living spaces that redefine luxury living.
             </p>
-            <Button 
-              onClick={() => navigate('/about')}
-              className="bg-primary hover:bg-primary/90 text-white text-lg py-6 px-8 reveal-on-scroll"
-              size="lg"
-            >
+            <Button onClick={() => navigate('/about')} className="bg-primary hover:bg-primary/90 text-white text-lg py-6 px-8 reveal-on-scroll" size="lg">
               Read More
             </Button>
           </div>
@@ -49,11 +37,7 @@ const AboutSection: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div className="reveal-on-scroll">
-            <img 
-              src="/lovable-uploads/de3e986a-4aaf-4274-a9c0-71292e9d15a4.png" 
-              alt="About Vision Developers" 
-              className="rounded-lg shadow-lg w-full h-auto"
-            />
+            <img src="/lovable-uploads/de3e986a-4aaf-4274-a9c0-71292e9d15a4.png" alt="About Vision Developers" className="rounded-lg shadow-lg w-full h-auto object-fill" />
           </div>
           <div className="reveal-on-scroll space-y-8">
             <p className="text-lg md:text-xl lg:text-2xl text-gray-700">
@@ -97,8 +81,6 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
