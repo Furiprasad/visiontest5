@@ -47,25 +47,25 @@ const PartnersSection: React.FC = () => {
 
   return (
     <section className="section-padding bg-gray-100">
-      <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2 font-poppins text-center reveal-on-scroll">
+      <div className="container mx-auto max-w-7xl">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-poppins text-center reveal-on-scroll">
           Trusted by Industry Leaders
         </h2>
-        <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto reveal-on-scroll">
+        <p className="text-lg md:text-xl lg:text-2xl text-center text-gray-600 mb-16 max-w-4xl mx-auto reveal-on-scroll">
           Proud to be the construction partner for top industry giants across India.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 items-center">
           {partners.map((partner, index) => (
             <div 
               key={index}
-              className="flex justify-center items-center p-4 reveal-on-scroll"
+              className="flex justify-center items-center p-6 reveal-on-scroll"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <img 
                 src={partner.logo} 
                 alt={partner.name} 
-                className="partner-logo max-h-24 md:max-h-28 w-auto object-contain"
+                className="partner-logo w-auto object-contain"
               />
             </div>
           ))}

@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -49,17 +50,17 @@ const ProjectsSection: React.FC = () => {
 
   return (
     <section className="section-padding bg-gray-50">
-      <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2 font-poppins text-center reveal-on-scroll">
+      <div className="container mx-auto max-w-7xl">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-poppins text-center reveal-on-scroll">
           Our Latest Projects
         </h2>
-        <div className="w-24 h-1 bg-accent mx-auto mb-12"></div>
+        <div className="w-32 h-1 bg-accent mx-auto mb-16"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {projects.map((project) => (
             <div 
               key={project.id} 
-              className="relative overflow-hidden rounded-lg shadow-lg h-[300px] md:h-[400px] cursor-pointer reveal-on-scroll"
+              className="relative overflow-hidden rounded-xl shadow-lg h-[400px] md:h-[500px] cursor-pointer reveal-on-scroll"
               onClick={() => navigate(`/projects/${project.id}`)}
             >
               <img 
@@ -67,23 +68,23 @@ const ProjectsSection: React.FC = () => {
                 alt={project.name} 
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
-              <div className="project-overlay p-6">
-                <h3 className="text-xl md:text-2xl font-bold mb-2">{project.name}</h3>
-                <p className="text-sm md:text-base mb-4">Area: {project.area}</p>
-                <p className="text-sm md:text-base mb-4">Type: {project.type}</p>
-                <p className="text-sm md:text-base mb-4">Status: {project.status}</p>
-                <p className="text-sm md:text-base mb-4">Description: {project.description}</p>
+              <div className="project-overlay p-8">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">{project.name}</h3>
+                <p className="text-base md:text-lg mb-4">Area: {project.area}</p>
+                <p className="text-base md:text-lg mb-4">Type: {project.type}</p>
+                <p className="text-base md:text-lg mb-4">Status: {project.status}</p>
+                <p className="text-base md:text-lg mb-6">Description: {project.description}</p>
                 <Button
-                  size="sm"
+                  size="lg"
                   variant="outline"
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-primary"
+                  className="bg-transparent border-white text-white hover:bg-white hover:text-primary text-lg py-6 px-8"
                 >
                   View Project
                 </Button>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4">
-                <h3 className="text-lg font-semibold">{project.name}</h3>
-                <p className="text-sm">Area: {project.area}</p>
+              <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-6">
+                <h3 className="text-xl md:text-2xl font-semibold">{project.name}</h3>
+                <p className="text-base md:text-lg">Area: {project.area}</p>
               </div>
             </div>
           ))}
@@ -93,10 +94,11 @@ const ProjectsSection: React.FC = () => {
           <Button 
             onClick={() => navigate('/projects')}
             variant="outline"
-            className="border-primary text-primary hover:bg-primary hover:text-white group"
+            className="border-primary text-primary hover:bg-primary hover:text-white group text-lg py-6 px-10"
+            size="lg"
           >
             See All Projects
-            <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform"/>
+            <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform"/>
           </Button>
         </div>
       </div>

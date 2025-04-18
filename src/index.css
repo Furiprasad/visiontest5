@@ -47,20 +47,52 @@
   html {
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
+    font-size: 100%; /* Base font size */
+  }
+  
+  @media (min-width: 768px) {
+    html {
+      font-size: 106.25%; /* Slightly larger base font on tablets */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    html {
+      font-size: 112.5%; /* Even larger base font on desktops */
+    }
   }
   
   body {
     @apply bg-background text-foreground;
     font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
+    @apply font-bold tracking-tight;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl sm:text-4xl md:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl sm:text-3xl;
+  }
+  
+  p {
+    @apply text-base sm:text-lg md:text-xl;
   }
 }
 
 .section-padding {
-  @apply px-4 py-16 md:px-8 lg:px-16 xl:px-24 md:py-24;
+  @apply px-6 py-16 md:px-12 lg:px-16 xl:px-24 md:py-24 lg:py-32;
 }
 
 .reveal-on-scroll {
@@ -83,8 +115,22 @@
 }
 
 .partner-logo {
+  max-height: 80px;
+  width: auto;
   filter: grayscale(100%);
   transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .partner-logo {
+    max-height: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .partner-logo {
+    max-height: 120px;
+  }
 }
 
 .partner-logo:hover {

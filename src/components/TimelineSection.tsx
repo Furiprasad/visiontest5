@@ -22,29 +22,29 @@ const TimelineSection: React.FC = () => {
 
   return (
     <section className="section-padding bg-white">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-bold mb-12 font-poppins text-center reveal-on-scroll">
+      <div className="container mx-auto max-w-7xl">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-16 font-poppins text-center reveal-on-scroll">
           From Infrastructure Titans to Luxury Living Pioneers: A Timeline of Vision Developers' Excellence
         </h2>
         
-        <div className="space-y-12">
+        <div className="space-y-20">
           {timelineEvents.map((event, index) => (
             <div 
               key={index}
-              className="grid md:grid-cols-3 gap-6 items-start reveal-on-scroll"
+              className="grid md:grid-cols-3 gap-8 items-start reveal-on-scroll"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="md:text-right">
-                <h3 className="text-xl font-semibold text-primary mb-2">{event.period}</h3>
-                <h4 className="text-lg font-medium">{event.title}</h4>
+                <h3 className="text-2xl md:text-3xl font-semibold text-primary mb-4">{event.period}</h3>
+                <h4 className="text-xl md:text-2xl font-medium">{event.title}</h4>
               </div>
               <div className="hidden md:block justify-self-center">
-                <div className="h-full w-px bg-primary relative">
-                  <div className="absolute top-0 -left-2 w-5 h-5 bg-primary rounded-full"></div>
+                <div className="h-full w-1 bg-primary relative">
+                  <div className="absolute top-0 -left-3 w-7 h-7 bg-primary rounded-full"></div>
                 </div>
               </div>
               <div>
-                <p className="text-gray-700">{event.description}</p>
+                <p className="text-base md:text-lg lg:text-xl text-gray-700">{event.description}</p>
               </div>
             </div>
           ))}
