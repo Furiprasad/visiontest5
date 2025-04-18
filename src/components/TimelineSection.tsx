@@ -9,14 +9,14 @@ const TimelineSection: React.FC = () => {
       description: "Partnered with telecommunications giants like Indus, Airtel, Tata, and Vodafone to bring connectivity across Andhra Pradesh and Telangana by installing cellphone towers along highways. This project showcases your commitment to infrastructure development and national progress."
     },
     {
-      period: "2015-2019",
-      title: "Nurturing Young Minds",
-      description: "Undertook the construction of residential school buildings, dorms, and quarters, creating over 1 lakh square feet of learning space in Ampollu."
-    },
-    {
       period: "2011-2016",
       title: "Building Efficiency at Gangavaram Port",
       description: "Played a vital role in expanding Gangavaram Port's capacity by constructing conveyer belt pilings and earthworks. Our flagship and prestigious project with expertise in handling large-scale projects and working in critical sectors."
+    },
+    {
+      period: "2015-2019",
+      title: "Nurturing Young Minds",
+      description: "Undertook the construction of residential school buildings, dorms, and quarters, creating over 1 lakh square feet of learning space in Ampollu."
     }
   ];
 
