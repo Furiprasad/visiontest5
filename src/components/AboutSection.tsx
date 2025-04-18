@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -46,12 +45,12 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="reveal-on-scroll">
             <img 
-              src="/lovable-uploads/0117bda7-81b6-4e64-9372-e67e72e4284f.png" 
-              alt="Vision Developers Building" 
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
+              src="/lovable-uploads/de3e986a-4aaf-4274-a9c0-71292e9d15a4.png" 
+              alt="About Vision Developers" 
+              className="rounded-lg shadow-lg w-full h-auto"
             />
           </div>
           <div className="reveal-on-scroll">

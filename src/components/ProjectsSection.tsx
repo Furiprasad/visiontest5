@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -31,14 +30,20 @@ const ProjectsSection: React.FC = () => {
     {
       id: 1,
       name: "Aditya Gold & Platinum",
+      type: "Residential",
       area: "45,000 Sq.ft",
-      image: "/lovable-uploads/5e90ec59-eb61-4111-8349-0c5783d63349.png"
+      image: "/lovable-uploads/c72bf87e-6d73-4667-beb8-4e189b70fb1e.png",
+      status: "Completed",
+      description: "Bespoke development of 20 luxury apartments with premium amenities and scenic views."
     },
     {
       id: 2,
       name: "Blue Horizon",
+      type: "Residential",
       area: "40,000 Sq.ft",
-      image: "/lovable-uploads/69ad697d-6e68-4911-a83d-8d2833104d02.png"
+      image: "/lovable-uploads/8a16c7d1-8f7f-4f81-8c3f-0daec9b20438.png",
+      status: "Completed",
+      description: "Modern residential complex featuring contemporary design and sustainable building practices."
     }
   ];
 
@@ -65,6 +70,9 @@ const ProjectsSection: React.FC = () => {
               <div className="project-overlay p-6">
                 <h3 className="text-xl md:text-2xl font-bold mb-2">{project.name}</h3>
                 <p className="text-sm md:text-base mb-4">Area: {project.area}</p>
+                <p className="text-sm md:text-base mb-4">Type: {project.type}</p>
+                <p className="text-sm md:text-base mb-4">Status: {project.status}</p>
+                <p className="text-sm md:text-base mb-4">Description: {project.description}</p>
                 <Button
                   size="sm"
                   variant="outline"

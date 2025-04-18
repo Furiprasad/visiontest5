@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 
 const PartnersSection: React.FC = () => {
@@ -24,24 +23,16 @@ const PartnersSection: React.FC = () => {
   
   const partners = [
     {
-      name: "Tata",
-      logo: "/lovable-uploads/3a53abaf-ce73-4e90-bd27-fb4993066465.png"
-    },
-    {
-      name: "Vodafone",
-      logo: "/lovable-uploads/90dbc074-2d2e-4814-a2fd-6885e09298f6.png"
-    },
-    {
       name: "East Coast",
-      logo: "/lovable-uploads/40a4c108-b576-41ed-9282-1b013f221c56.png"
+      logo: "/lovable-uploads/b4fe986b-1045-4154-9fe7-c4cb1398c53b.png"
     },
     {
       name: "Gangavaram Port",
-      logo: "/lovable-uploads/85c1f10c-72ca-4efb-a5e6-8a729f32cc46.png"
+      logo: "/lovable-uploads/eecd99b8-d228-4098-8bed-7d1371ed1c76.png"
     },
     {
-      name: "Indus Towers",
-      logo: "/lovable-uploads/30223631-3df9-43c8-88e1-f001ae318c21.png"
+      name: "Vodafone",
+      logo: "/lovable-uploads/ff5ee40c-6378-4db1-a9ea-ed04768ba68f.png"
     }
   ];
 
