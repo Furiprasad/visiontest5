@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -33,7 +32,7 @@ const ProjectsSection: React.FC = () => {
       name: "Aditya Gold & Platinum",
       type: "Residential",
       area: "45,000 Sq.ft",
-      image: "/lovable-uploads/e347d401-e4bc-4c4b-8030-fe3d9ada5769.png",
+      image: "/lovable-uploads/82f38494-b10b-45c7-97e9-fc04693bd39e.png",
       status: "Completed",
       description: "Bespoke development of 20 luxury apartments with premium amenities and scenic views."
     },
@@ -42,9 +41,9 @@ const ProjectsSection: React.FC = () => {
       name: "Blue Horizon",
       type: "Residential",
       area: "40,000 Sq.ft",
-      image: "/lovable-uploads/5f9b9394-ac7f-41f9-bb39-ac2610b64aea.png",
+      image: "/lovable-uploads/5bdab957-e247-45a8-8018-59dc30e6d4d4.png",
       status: "Under Construction",
-      description: "Modern residential complex featuring contemporary design and sustainable building practices."
+      description: "Modern residential complex featuring contemporary design."
     }
   ];
 
@@ -60,7 +59,7 @@ const ProjectsSection: React.FC = () => {
           {projects.map((project) => (
             <div 
               key={project.id} 
-              className="relative overflow-hidden rounded-xl shadow-lg h-[400px] md:h-[500px] cursor-pointer reveal-on-scroll"
+              className="relative overflow-hidden rounded-xl shadow-lg h-[500px] cursor-pointer reveal-on-scroll"
               onClick={() => navigate(`/project/${project.id}`)}
             >
               <img 

@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
@@ -52,7 +51,7 @@ const ProjectDetail: React.FC = () => {
       area: "45000 sq. ft.",
       type: "Residential Apartments",
       location: "Sagarnagar, Visakhapatnam",
-      mainImage: "/lovable-uploads/e347d401-e4bc-4c4b-8030-fe3d9ada5769.png",
+      mainImage: "/lovable-uploads/82f38494-b10b-45c7-97e9-fc04693bd39e.png",
       description: "Bespoke Development Of Luxury Residences",
       content: (
         <>
@@ -60,11 +59,6 @@ const ProjectDetail: React.FC = () => {
             <p className="text-lg mb-8">
               Discover our exquisite portfolio of residential marvels that redefine contemporary living. From sprawling apartments to elegant townhouses, each project is meticulously designed, blending sophistication with functionality. Our flagship projects in Visakhapatnam showcase our dedication to creating homes that resonate with discerning homebuyers. Explore our ventures and find your perfect abode amidst unparalleled elegance and modernity.
             </p>
-            <img 
-              src="/lovable-uploads/d3aa3f03-a931-4944-99dd-80f7dc44b7ba.png" 
-              alt="Luxury Living" 
-              className="w-full h-auto rounded-lg shadow-lg mb-8" 
-            />
             <p className="text-lg mb-4">
               Step into a world of unmatched luxury and behold the breathtaking sea views every day from our opulent 3 BHK apartments at Aditya Gold & Aditya Platinum in Sagar Nagar, Visakhapatnam. The project offers unparalleled comfort and sophistication, making it the perfect choice.
             </p>
@@ -130,7 +124,7 @@ const ProjectDetail: React.FC = () => {
       area: "40000 sq. ft.",
       type: "Residential Apartments",
       location: "Sagarnagar, Visakhapatnam",
-      mainImage: "/lovable-uploads/5f9b9394-ac7f-41f9-bb39-ac2610b64aea.png",
+      mainImage: "/lovable-uploads/5bdab957-e247-45a8-8018-59dc30e6d4d4.png",
       description: "Bespoke Development Of Luxury Residences",
       content: (
         <>
@@ -138,11 +132,6 @@ const ProjectDetail: React.FC = () => {
             <p className="text-lg mb-8">
               Welcome to Blue Horizon, an exclusive apartment project by Vision Developers. Designed to cater to your dreams of luxurious living, Blue Horizon offers 20 elegant sea-view apartments that redefine comfort and elegance.
             </p>
-            <img 
-              src="/lovable-uploads/13aef958-2347-40a1-8d20-b18fc2b835b9.png" 
-              alt="Blue Horizon Interior" 
-              className="w-full h-auto rounded-lg shadow-lg mb-8" 
-            />
           </div>
           
           <div className="mb-16">
@@ -150,6 +139,11 @@ const ProjectDetail: React.FC = () => {
             <p className="text-lg mb-8">
               Experience breathtaking sea views every day from your balcony. At Blue Horizon, nature meets modern luxury to create an exceptional lifestyle.
             </p>
+            <img 
+              src="/lovable-uploads/00bdbbc7-a4f4-44f9-b081-3a5c7dbf4638.png" 
+              alt="Blue Horizon Night View" 
+              className="w-full h-auto rounded-lg shadow-lg mb-8" 
+            />
 
             <h3 className="text-2xl font-bold mb-4">Prime Location</h3>
             <p className="text-lg mb-8">
