@@ -19,8 +19,8 @@ const HeroSection: React.FC = () => {
             <img 
               src={slide.image} 
               alt="Vision Developers Hero" 
-              className="w-full h-full object-cover object-center"
-              style={{ objectFit: 'cover', objectPosition: 'center' }}
+              className="w-full h-full object-cover"
+              style={{ objectPosition: 'center' }}
             />
           </div>
         ))}

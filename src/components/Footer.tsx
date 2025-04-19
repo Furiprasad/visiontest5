@@ -74,11 +74,15 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           
-          {/* Column 4: Empty column to maintain grid layout */}
+          {/* Column 4: Contact */}
           <div className="space-y-6">
             <h3 className="text-xl md:text-2xl font-semibold mb-6 font-poppins">Contact</h3>
-            <a href="mailto:info@visiondevelopers.co" className="text-gray-300 hover:text-accent transition-colors duration-300 text-base md:text-lg block">
+            <a href="mailto:info@visiondevelopers.co" className="text-gray-300 hover:text-accent transition-colors duration-300 text-base md:text-lg block mb-4">
               info@visiondevelopers.co
+            </a>
+            <a href="tel:+919988393555" className="text-gray-300 hover:text-accent transition-colors duration-300 text-base md:text-lg flex items-center">
+              <Phone size={18} className="mr-2" />
+              +91 9988393555
             </a>
           </div>
         </div>

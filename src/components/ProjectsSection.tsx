@@ -33,7 +33,7 @@ const ProjectsSection: React.FC = () => {
       name: "Aditya Gold & Platinum",
       type: "Residential",
       area: "45,000 Sq.ft",
-      image: "/lovable-uploads/c72bf87e-6d73-4667-beb8-4e189b70fb1e.png",
+      image: "/lovable-uploads/e347d401-e4bc-4c4b-8030-fe3d9ada5769.png",
       status: "Completed",
       description: "Bespoke development of 20 luxury apartments with premium amenities and scenic views."
     },
@@ -42,8 +42,8 @@ const ProjectsSection: React.FC = () => {
       name: "Blue Horizon",
       type: "Residential",
       area: "40,000 Sq.ft",
-      image: "/lovable-uploads/8a16c7d1-8f7f-4f81-8c3f-0daec9b20438.png",
-      status: "Completed",
+      image: "/lovable-uploads/5f9b9394-ac7f-41f9-bb39-ac2610b64aea.png",
+      status: "Under Construction",
       description: "Modern residential complex featuring contemporary design and sustainable building practices."
     }
   ];
@@ -61,7 +61,7 @@ const ProjectsSection: React.FC = () => {
             <div 
               key={project.id} 
               className="relative overflow-hidden rounded-xl shadow-lg h-[400px] md:h-[500px] cursor-pointer reveal-on-scroll"
-              onClick={() => navigate(`/projects/${project.id}`)}
+              onClick={() => navigate(`/project/${project.id}`)}
             >
               <img 
                 src={project.image} 
@@ -79,7 +79,7 @@ const ProjectsSection: React.FC = () => {
                   variant="outline"
                   className="bg-transparent border-white text-white hover:bg-white hover:text-primary text-lg py-6 px-8"
                 >
-                  View Project
+                  Read More
                 </Button>
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-6">

@@ -184,10 +184,16 @@ const Contact: React.FC = () => {
               </p>
               
               <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
-                {/* This would be replaced with an actual map integration */}
-                <div className="w-full h-full flex items-center justify-center bg-gray-200">
-                  <p className="text-gray-500">Map placeholder - would integrate Google Maps here</p>
-                </div>
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d121615.8653287095!2d83.3350274!3d17.7212634!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3a3943b795463a99%3A0xb503dc7832f4bb94!2sDutch%20House%20Apartment%20(Kirlampudi%20layout)%20401%2C%20Dutch%20House%20Apartments%20Beach%20Rd%2C%20Kirlampudi%20Layout%2C%20Chinna%20Waltair%2C%20Pedda%20Waltair%20Visakhapatnam%2C%20Andhra%20Pradesh%20530017!3m2!1d17.721263399999998!2d83.3350274!5e0!3m2!1sen!2sin!4v1745042152338!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="450" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                ></iframe>
               </div>
             </div>
           </div>

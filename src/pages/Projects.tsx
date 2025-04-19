@@ -1,7 +1,11 @@
+
 import React, { useEffect } from 'react';
 import MainLayout from '../layouts/MainLayout';
+import { useNavigate } from 'react-router-dom';
 
 const Projects: React.FC = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
     
@@ -30,7 +34,7 @@ const Projects: React.FC = () => {
       name: "Aditya Gold & Platinum",
       type: "Residential",
       area: "45,000 Sq.ft",
-      image: "/lovable-uploads/782d536c-aa2e-4622-987b-446a4aea0916.png",
+      image: "/lovable-uploads/e347d401-e4bc-4c4b-8030-fe3d9ada5769.png",
       status: "Completed",
       description: "Bespoke development of 20 luxury apartments with premium amenities and scenic views."
     },
@@ -39,8 +43,8 @@ const Projects: React.FC = () => {
       name: "Blue Horizon",
       type: "Residential",
       area: "40,000 Sq.ft",
-      image: "/lovable-uploads/e6a10960-debe-43fa-bbca-0210851b0f17.png",
-      status: "Completed",
+      image: "/lovable-uploads/5f9b9394-ac7f-41f9-bb39-ac2610b64aea.png",
+      status: "Under Construction",
       description: "Modern residential complex featuring contemporary design and sustainable building practices."
     }
   ];
@@ -110,7 +114,7 @@ const Projects: React.FC = () => {
                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 ${
                     project.status === 'Completed' 
                       ? 'bg-green-100 text-green-800' 
-                      : project.status === 'In Progress'
+                      : project.status === 'Under Construction'
                         ? 'bg-blue-100 text-blue-800'
                         : 'bg-amber-100 text-amber-800'
                   }`}>
@@ -128,15 +132,18 @@ const Projects: React.FC = () => {
                     </div>
                   </div>
                   <p className="text-gray-700 mb-6">{project.description}</p>
-                  <button className="px-6 py-2 bg-primary text-white hover:bg-primary/90 transition rounded">
+                  <button 
+                    className="px-6 py-2 bg-primary text-white hover:bg-primary/90 transition rounded"
+                    onClick={() => navigate(`/project/${project.id}`)}
+                  >
                     Read More
                   </button>
                 </div>
-                <div className="order-1 md:order-none overflow-hidden rounded-lg">
+                <div className="order-1 md:order-none overflow-hidden rounded-lg h-[300px] md:h-[400px]">
                   <img 
                     src={project.image} 
                     alt={project.name} 
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
                 </div>
               </div>
