@@ -27,7 +27,7 @@ const AboutSection: React.FC = () => {
           </h2>
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg md:text-xl lg:text-2xl text-gray-700 mb-10 reveal-on-scroll">
-              Vision Developers, formerly known as Aditya Technocrats, brings decades of experience in infrastructure to the modern and luxurious residential segment. Led by the visionary Sri Suresh Madineni, we've transformed, driven by a passion for creating exceptional living spaces that redefine luxury living.
+              Vision Developers, formerly known as Aditya Technocrats, brings decades of experience in infrastructure to the modern and luxurious residential segment. Led by the visionary Sri Suresh Maddineni, we've transformed, driven by a passion for creating exceptional living spaces that redefine luxury living.
             </p>
             <Button onClick={() => navigate('/about')} className="bg-primary hover:bg-primary/90 text-white text-lg py-6 px-8 reveal-on-scroll" size="lg">
               Read More
@@ -35,9 +35,9 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          <div className="reveal-on-scroll">
-            <img src="/lovable-uploads/de3e986a-4aaf-4274-a9c0-71292e9d15a4.png" alt="About Vision Developers" className="rounded-lg shadow-lg w-full h-auto object-fill" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch mb-20">
+          <div className="reveal-on-scroll h-full">
+            <img src="/lovable-uploads/de3e986a-4aaf-4274-a9c0-71292e9d15a4.png" alt="About Vision Developers" className="rounded-lg shadow-lg w-full h-full object-cover min-h-[500px]" />
           </div>
           <div className="reveal-on-scroll space-y-8">
             <p className="text-lg md:text-xl lg:text-2xl text-gray-700">
@@ -83,4 +83,5 @@ const AboutSection: React.FC = () => {
       </div>
     </section>;
 };
+
 export default AboutSection;

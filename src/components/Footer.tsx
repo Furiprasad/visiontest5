@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Mail, Phone } from 'lucide-react';
+import { Facebook, Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -38,15 +37,10 @@ const Footer: React.FC = () => {
               Vision Developers<br />
               #7-24-9/5, #506, Dutch House,<br />
               Kirlampudi Layout, Visakhapatnam - 530017.<br />
-              <a href="mailto:info@visiondevelopers.co" className="text-accent hover:text-accent/80 transition-colors duration-300 block mt-2">
-                info@visiondevelopers.co
-              </a>
-              <a href="tel:+919988393555" className="text-accent hover:text-accent/80 transition-colors duration-300 block">
-                +91 9988393555
-              </a>
+              info@visiondevelopers.co
             </address>
           </div>
-          
+
           {/* Column 3: Quick Links */}
           <div className="space-y-6">
             <h3 className="text-xl md:text-2xl font-semibold mb-6 font-poppins">Quick Links</h3>
