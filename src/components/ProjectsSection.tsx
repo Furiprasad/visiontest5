@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -42,7 +41,7 @@ const ProjectsSection: React.FC = () => {
       name: "Blue Horizon",
       type: "Residential",
       area: "40,000 Sq.ft",
-      image: "/lovable-uploads/b53947d9-9eba-47ee-b80e-1d4ce14c1734.png",
+      image: "/lovable-uploads/e0548751-a148-4533-ba1b-79205dcd2606.png",
       status: "Under Construction",
       description: "Modern residential complex featuring contemporary designs."
     }
@@ -73,7 +72,7 @@ const ProjectsSection: React.FC = () => {
                 <p className="text-base md:text-lg mb-4">Area: {project.area}</p>
                 <p className="text-base md:text-lg mb-4">Type: {project.type}</p>
                 <p className="text-base md:text-lg mb-4">Status: {project.status}</p>
-                <p className="text-base md:text-lg mb-6">Description: {project.description}</p>
+                <p className="text-base md:text-lg mb-6">{project.description}</p>
                 <Button
                   size="lg"
                   variant="outline"
