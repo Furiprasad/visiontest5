@@ -59,6 +59,11 @@ const ProjectDetail: React.FC = () => {
             <p className="text-lg mb-8">
               Discover our exquisite portfolio of residential marvels that redefine contemporary living. From sprawling apartments to elegant townhouses, each project is meticulously designed, blending sophistication with functionality. Our flagship projects in Visakhapatnam showcase our dedication to creating homes that resonate with discerning homebuyers. Explore our ventures and find your perfect abode amidst unparalleled elegance and modernity.
             </p>
+            <img 
+              src="/lovable-uploads/b2574fdf-3982-4fcb-b6bb-bd8eaf3e49c0.png" 
+              alt="Luxury Interior" 
+              className="w-full h-auto rounded-lg shadow-lg mb-8" 
+            />
             <p className="text-lg mb-4">
               Step into a world of unmatched luxury and behold the breathtaking sea views every day from our opulent 3 BHK apartments at Aditya Gold & Aditya Platinum in Sagar Nagar, Visakhapatnam. The project offers unparalleled comfort and sophistication, making it the perfect choice.
             </p>

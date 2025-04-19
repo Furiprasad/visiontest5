@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -41,9 +42,9 @@ const ProjectsSection: React.FC = () => {
       name: "Blue Horizon",
       type: "Residential",
       area: "40,000 Sq.ft",
-      image: "/lovable-uploads/5bdab957-e247-45a8-8018-59dc30e6d4d4.png",
+      image: "/lovable-uploads/b53947d9-9eba-47ee-b80e-1d4ce14c1734.png",
       status: "Under Construction",
-      description: "Modern residential complex featuring contemporary design."
+      description: "Modern residential complex featuring contemporary designs."
     }
   ];
 
