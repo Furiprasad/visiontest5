@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import MainLayout from '../layouts/MainLayout';
 import { useNavigate } from 'react-router-dom';
@@ -44,8 +43,8 @@ const Projects: React.FC = () => {
       type: "Residential",
       area: "40,000 Sq.ft",
       image: "/lovable-uploads/0ee2598d-751b-4c78-a0f7-0e2334b4207c.png",
-      status: "Under Construction",
-      description: "Modern residential complex featuring contemporary designs and sustainable living solutions."
+      status: "Under Construction", 
+      description: "Modern residential complex featuring contemporary designs."
     }
   ];
   
