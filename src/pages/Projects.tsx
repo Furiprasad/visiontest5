@@ -42,8 +42,8 @@ const Projects: React.FC = () => {
       name: "Blue Horizon",
       type: "Residential",
       area: "40,000 Sq.ft",
-      image: "/lovable-uploads/0ee2598d-751b-4c78-a0f7-0e2334b4207c.png",
-      status: "Under Construction", 
+      image: "/lovable-uploads/5d274375-4863-48ca-887a-91758d283585.png",
+      status: "Under Construction",
       description: "Modern residential complex featuring contemporary designs."
     }
   ];
