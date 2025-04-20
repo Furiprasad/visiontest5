@@ -19,7 +19,7 @@ const HeroSection: React.FC = () => {
             <img 
               src={slide.image} 
               alt="Vision Developers Hero" 
-              className="w-full h-auto object-contain"
+              className="w-full h-auto object-cover"
               style={{
                 maxWidth: '100%',
                 display: 'block'
