@@ -9,20 +9,20 @@ const HeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[80vh] overflow-hidden bg-gray-100">
-      <div className="relative w-full h-full flex items-center justify-center">
+    <section className="relative w-full h-auto min-h-[40vh] overflow-hidden bg-gray-100">
+      <div className="relative w-full flex items-center justify-center">
         {slides.map((slide, index) => (
           <div 
             key={index}
-            className="absolute inset-0 w-full h-full"
+            className="w-full"
           >
             <img 
               src={slide.image} 
               alt="Vision Developers Hero" 
-              className="w-full h-full object-contain md:object-cover"
+              className="w-full h-auto object-contain"
               style={{
-                maxHeight: '100%',
-                width: '100%'
+                maxWidth: '100%',
+                display: 'block'
               }}
             />
           </div>
