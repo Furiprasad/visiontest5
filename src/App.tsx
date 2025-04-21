@@ -10,6 +10,10 @@ import Portfolio from "./pages/Portfolio";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import EastCoastRailways from "./pages/projects/EastCoastRailways";
+import Piaggio from "./pages/projects/Piaggio";
+import Vodafone from "./pages/projects/Vodafone";
+import AndhraPradesh from "./pages/projects/AndhraPradesh";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +28,10 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/east-coast-railways" element={<EastCoastRailways />} />
+          <Route path="/projects/piaggio" element={<Piaggio />} />
+          <Route path="/projects/vodafone" element={<Vodafone />} />
+          <Route path="/projects/andhra-pradesh" element={<AndhraPradesh />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
