@@ -3,34 +3,26 @@ import React from "react";
 import MainLayout from "../layouts/MainLayout";
 import { Link } from "react-router-dom";
 
-const portfolioItems = [
+const images = [
   {
-    id: 1,
-    title: "East Coast Railways",
-    image: "/lovable-uploads/0c8f906a-f4dc-4f8b-b1d5-02bf6de0a94b.png",
-    link: "/projects/east-coast-railways",
+    src: "/lovable-uploads/ec.jpg",
     alt: "East Coast Railways",
+    link: "/projects/east-coast-railways.html",
   },
   {
-    id: 2,
-    title: "Piaggio (Vision Automobiles)",
-    image: "/lovable-uploads/29adc0d4-cca9-42c6-8074-fcfecf714654.png",
-    link: "/projects/piaggio",
-    alt: "Piaggio (Vision Automobiles)",
+    src: "/lovable-uploads/piaggio.jpg",
+    alt: "Vision Automobiles",
+    link: "/projects/piaggio.html",
   },
   {
-    id: 3,
-    title: "Vodafone (Vision Developers)",
-    image: "/lovable-uploads/0d9ff37c-a1c9-4a59-8fb5-cc9c9287559e.png",
-    link: "/projects/vodafone",
-    alt: "Vodafone (Vision Developers)",
+    src: "/lovable-uploads/vd.jpg",
+    alt: "Vision Developers Telecom",
+    link: "/projects/vodafone.html",
   },
   {
-    id: 4,
-    title: "Andhra Pradesh (Education Infra)",
-    image: "/lovable-uploads/921e926f-a1fd-41f0-b7ac-73268c39b5fc.png",
-    link: "/projects/andhra-pradesh",
-    alt: "Andhra Pradesh (Education Infra)",
+    src: "/lovable-uploads/ap.jpg",
+    alt: "Vision Developers Education Infra",
+    link: "/projects/andhra-pradesh.html",
   },
 ];
 
@@ -44,33 +36,35 @@ const Portfolio: React.FC = () => (
       </div>
     </section>
 
-    {/* Portfolio Grid */}
+    {/* Image Grid Section */}
     <section className="section-padding">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {portfolioItems.map((item) => (
-            <div
-              key={item.id}
-              className="relative rounded-xl shadow-lg overflow-hidden bg-white group transition transform hover:scale-[1.03] hover:shadow-xl"
+          {images.map(({ src, alt, link }, idx) => (
+            <Link
+              to={link}
+              key={idx}
+              className="group relative block rounded-xl overflow-hidden shadow-lg transition transform hover:scale-105 bg-white"
+              style={{ minHeight: "18rem" }}
             >
               <img
-                src={item.image}
-                alt={item.alt}
-                className="w-full h-64 object-contain bg-gray-50"
+                src={src}
+                alt={alt}
+                className="w-full h-64 object-cover transition-transform duration-500"
                 loading="lazy"
               />
-              <div className="absolute bottom-0 right-0 p-3">
-                <Link
-                  to={item.link}
-                  className="inline-block bg-primary text-white text-sm px-4 py-2 rounded shadow hover:bg-secondary transition font-semibold"
-                >
+              <div className="absolute inset-0 flex items-center justify-center 
+                bg-[#000000e6] bg-opacity-0 group-hover:bg-opacity-80 
+                opacity-0 group-hover:opacity-100 transition-all duration-300
+                rounded-xl 
+                cursor-pointer"
+                style={{ pointerEvents: "none" }}
+              >
+                <span className="text-white text-xl md:text-2xl font-semibold font-poppins drop-shadow" style={{ pointerEvents: "auto" }}>
                   View More...
-                </Link>
+                </span>
               </div>
-              <div className="px-5 py-3">
-                <h3 className="text-lg font-bold text-primary mb-1">{item.title}</h3>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
