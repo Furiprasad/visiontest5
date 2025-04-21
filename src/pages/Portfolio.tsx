@@ -1,97 +1,106 @@
 
-import React, { useEffect } from 'react';
-import MainLayout from '../layouts/MainLayout';
+import React, { useEffect } from "react";
+import MainLayout from "../layouts/MainLayout";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
-const imageData = [
+const portfolioImages = [
   {
-    src: "/lovable-uploads/88feddeb-4ba9-48a5-8cca-5fb4855150f4.png", // ec.jpg
-    alt: "East Coast Railway"
+    id: 1,
+    src: "/lovable-uploads/13ef268c-913e-4ec5-8fa9-9ad3472db409.png", // ec.jpg
+    title: "East Coast Railway Infrastructure",
+    description: "Railways, Bridges & Civil Structures – Excellence since 2002"
   },
   {
-    src: "/lovable-uploads/3a08ee4e-8b60-4768-b4c3-5e5c6dad0cff.png", // piaggio.jpg
-    alt: "Piaggio"
+    id: 2,
+    src: "/lovable-uploads/8e46d5b8-0412-46bd-a512-c50ea9bb16b6.png", // piaggio.jpg
+    title: "Vision Automobiles",
+    description: "Trusted Appie & Auto Dealer in Andhra Pradesh"
   },
   {
-    src: "/lovable-uploads/bb12781b-281f-4e82-bcd4-2e39e82be2bb.png", // vd.jpg
-    alt: "Vodafone"
+    id: 3,
+    src: "/lovable-uploads/e3ee9053-5871-435e-a79b-aeeace890f24.png", // vd.jpg
+    title: "Telecom & Tower Projects",
+    description: "Expanding Communication Infrastructure"
   },
   {
-    src: "/lovable-uploads/cf62d2e4-6eb6-44f8-9e51-97c827f4492e.png", // ap.jpg
-    alt: "Andhra Pradesh Government"
+    id: 4,
+    src: "/lovable-uploads/32ad64d9-577a-4d6d-9a9a-4d3c9157b5db.png", // ap.jpg
+    title: "Educational Infrastructure",
+    description: "Community-centric School Building"
   }
 ];
 
 const Portfolio: React.FC = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-    const elements = document.querySelectorAll('.reveal-on-scroll');
-    elements.forEach(el => observer.observe(el));
-    return () => {
-      elements.forEach(el => observer.unobserve(el));
-    };
   }, []);
 
   return (
     <MainLayout>
       {/* Header Banner */}
-      <section className="relative py-20 md:py-28 bg-primary">
+      <section className="relative py-16 md:py-24 bg-primary">
         <div className="container mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 font-poppins">Our Portfolio</h1>
-          <p className="text-lg opacity-90">Showcasing our finest work and achievements</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 font-poppins">
+            Our Portfolio
+          </h1>
+          <p className="text-lg opacity-90">
+            Exploring the scope of our work across sectors
+          </p>
         </div>
       </section>
-
-      {/* Image Grid */}
+      {/* Responsive Grid Image Gallery */}
       <section className="section-padding">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {imageData.map((img, idx) => (
+          <div
+            className="
+              grid gap-8
+              grid-cols-1
+              sm:grid-cols-2
+              lg:grid-cols-4
+              items-stretch
+            "
+          >
+            {portfolioImages.map((item) => (
               <div
-                key={img.src}
-                className="bg-white rounded-lg shadow-md overflow-hidden flex items-center justify-center p-8 transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll"
-                style={{ background: "#fff" }}
+                key={item.id}
+                className="
+                  flex flex-col items-center justify-between
+                  bg-white rounded-xl shadow-md hover:shadow-xl
+                  transition-shadow duration-300
+                  overflow-hidden
+                  group
+                "
               >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="object-contain max-h-44 w-full"
-                  style={{ filter: 'grayscale(0%)', transition: "filter 0.3s, transform 0.3s" }}
-                />
+                <div className="w-full aspect-[4/3] flex justify-center items-center bg-gray-50">
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className="
+                      object-contain w-full h-full transition-transform duration-200
+                      group-hover:scale-105
+                    "
+                  />
+                </div>
+                <div className="flex flex-col gap-2 text-center px-4 py-4 flex-1 w-full">
+                  <h3 className="text-lg font-semibold font-poppins text-gray-900 mb-1">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-3 min-h-[40px]">
+                    {item.description}
+                  </p>
+                  <Button
+                    variant="default"
+                    className="w-full mt-auto"
+                    onClick={() => navigate(`/portfolio/${item.id}`)}
+                  >
+                    View Details
+                  </Button>
+                </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div className="reveal-on-scroll">
-              <h3 className="text-4xl font-bold text-accent mb-2">55+</h3>
-              <p className="text-gray-300">Projects Completed</p>
-            </div>
-            <div className="reveal-on-scroll" style={{ transitionDelay: '100ms' }}>
-              <h3 className="text-4xl font-bold text-accent mb-2">20+</h3>
-              <p className="text-gray-300">Years Experience</p>
-            </div>
-            <div className="reveal-on-scroll" style={{ transitionDelay: '200ms' }}>
-              <h3 className="text-4xl font-bold text-accent mb-2">85+</h3>
-              <p className="text-gray-300">Happy Clients</p>
-            </div>
-            <div className="reveal-on-scroll" style={{ transitionDelay: '300ms' }}>
-              <h3 className="text-4xl font-bold text-accent mb-2">10+</h3>
-              <p className="text-gray-300">Industry Awards</p>
-            </div>
           </div>
         </div>
       </section>
@@ -100,3 +109,4 @@ const Portfolio: React.FC = () => {
 };
 
 export default Portfolio;
+
