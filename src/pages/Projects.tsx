@@ -1,71 +1,57 @@
-
 import React, { useEffect } from 'react';
 import MainLayout from '../layouts/MainLayout';
-
 const Projects: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     const elements = document.querySelectorAll('.reveal-on-scroll');
-    elements.forEach((el) => observer.observe(el));
-
+    elements.forEach(el => observer.observe(el));
     return () => {
-      elements.forEach((el) => observer.unobserve(el));
+      elements.forEach(el => observer.unobserve(el));
     };
   }, []);
-
-  const projects = [
-    {
-      id: 1,
-      name: "Aditya Gold & Platinum",
-      type: "Residential",
-      area: "45,000 Sq.ft",
-      image: "/lovable-uploads/5e90ec59-eb61-4111-8349-0c5783d63349.png",
-      status: "Completed",
-      description: "Bespoke development of 20 luxury apartments with premium amenities and scenic views."
-    },
-    {
-      id: 2,
-      name: "Blue Horizon",
-      type: "Residential",
-      area: "40,000 Sq.ft",
-      image: "/lovable-uploads/69ad697d-6e68-4911-a83d-8d2833104d02.png",
-      status: "Completed",
-      description: "Modern residential complex featuring contemporary design and sustainable building practices."
-    },
-    {
-      id: 3,
-      name: "Urban Square",
-      type: "Commercial",
-      area: "60,000 Sq.ft",
-      image: "/lovable-uploads/4fe120fb-d1f3-43d9-9545-35d1dee61713.png",
-      status: "In Progress",
-      description: "Mixed-use development combining office spaces, retail outlets, and recreational facilities."
-    },
-    {
-      id: 4,
-      name: "Green Valley Residences",
-      type: "Residential",
-      area: "38,000 Sq.ft",
-      image: "/lovable-uploads/0117bda7-81b6-4e64-9372-e67e72e4284f.png",
-      status: "Upcoming",
-      description: "Eco-friendly residential complex with green spaces and energy-efficient design."
-    }
-  ];
-  
-  return (
-    <MainLayout>
+  const projects = [{
+    id: 1,
+    name: "Aditya Gold & Platinum",
+    type: "Residential",
+    area: "45,000 Sq.ft",
+    image: "/lovable-uploads/5e90ec59-eb61-4111-8349-0c5783d63349.png",
+    status: "Completed",
+    description: "Bespoke development of 20 luxury apartments with premium amenities and scenic views."
+  }, {
+    id: 2,
+    name: "Blue Horizon",
+    type: "Residential",
+    area: "40,000 Sq.ft",
+    image: "/lovable-uploads/69ad697d-6e68-4911-a83d-8d2833104d02.png",
+    status: "Completed",
+    description: "Modern residential complex featuring contemporary design and sustainable building practices."
+  }, {
+    id: 3,
+    name: "Urban Square",
+    type: "Commercial",
+    area: "60,000 Sq.ft",
+    image: "/lovable-uploads/4fe120fb-d1f3-43d9-9545-35d1dee61713.png",
+    status: "In Progress",
+    description: "Mixed-use development combining office spaces, retail outlets, and recreational facilities."
+  }, {
+    id: 4,
+    name: "Green Valley Residences",
+    type: "Residential",
+    area: "38,000 Sq.ft",
+    image: "/lovable-uploads/0117bda7-81b6-4e64-9372-e67e72e4284f.png",
+    status: "Upcoming",
+    description: "Eco-friendly residential complex with green spaces and energy-efficient design."
+  }];
+  return <MainLayout>
       {/* Header Banner */}
       <section className="relative py-20 md:py-28 bg-primary">
         <div className="container mx-auto px-4 text-center text-white">
@@ -123,19 +109,9 @@ const Projects: React.FC = () => {
           <h2 className="text-3xl font-bold mb-12 font-poppins text-center reveal-on-scroll">Featured Projects</h2>
           
           <div className="space-y-16">
-            {projects.map((project, index) => (
-              <div 
-                key={project.id}
-                className={`grid grid-cols-1 ${index % 2 === 0 ? 'md:grid-cols-[2fr_3fr]' : 'md:grid-cols-[3fr_2fr] md:flex-row-reverse'} gap-8 items-center reveal-on-scroll`}
-              >
+            {projects.map((project, index) => <div key={project.id} className={`grid grid-cols-1 ${index % 2 === 0 ? 'md:grid-cols-[2fr_3fr]' : 'md:grid-cols-[3fr_2fr] md:flex-row-reverse'} gap-8 items-center reveal-on-scroll`}>
                 <div className="order-2 md:order-none">
-                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 ${
-                    project.status === 'Completed' 
-                      ? 'bg-green-100 text-green-800' 
-                      : project.status === 'In Progress'
-                        ? 'bg-blue-100 text-blue-800'
-                        : 'bg-amber-100 text-amber-800'
-                  }`}>
+                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 ${project.status === 'Completed' ? 'bg-green-100 text-green-800' : project.status === 'In Progress' ? 'bg-blue-100 text-blue-800' : 'bg-amber-100 text-amber-800'}`}>
                     {project.status}
                   </span>
                   <h3 className="text-2xl font-bold mb-2 font-poppins">{project.name}</h3>
@@ -150,24 +126,15 @@ const Projects: React.FC = () => {
                     </div>
                   </div>
                   <p className="text-gray-700 mb-6">{project.description}</p>
-                  <button className="px-6 py-2 bg-primary text-white hover:bg-primary/90 transition rounded">
-                    View Details
-                  </button>
+                  <button className="px-6 py-2 bg-primary text-white hover:bg-primary/90 transition rounded">View More.......</button>
                 </div>
                 <div className="order-1 md:order-none overflow-hidden rounded-lg">
-                  <img 
-                    src={project.image} 
-                    alt={project.name} 
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
-                  />
+                  <img src={project.image} alt={project.name} className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
-    </MainLayout>
-  );
+    </MainLayout>;
 };
-
 export default Projects;
