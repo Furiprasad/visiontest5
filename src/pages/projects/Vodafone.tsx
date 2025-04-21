@@ -1,10 +1,7 @@
-
 import React from "react";
 import MainLayout from "../../layouts/MainLayout";
 import { Link } from "react-router-dom";
-
-const Vodafone: React.FC = () => (
-  <MainLayout>
+const Vodafone: React.FC = () => <MainLayout>
     <section className="section-padding bg-white">
       <div className="container mx-auto max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-bold font-poppins mb-8 text-primary">
@@ -17,12 +14,9 @@ const Vodafone: React.FC = () => (
           <p className="mb-6 text-lg text-gray-800">
             In our formative years, we partnered with industry giants like Vodafone, contributing to the backbone of mobile communication by installing and commissioning cellphone towers across multiple regions. Our commitment to precision, safety, and timely execution earned us recognition and laid the foundation for the values we uphold today.
           </p>
-          <img
-            src="/lovable-uploads/d7bbd542-45b3-4e39-bd60-882a74dde0f8.png"
-            alt="Cellphone Towers"
-            className="w-full max-h-72 object-contain mb-6 rounded-lg shadow-md"
-            style={{ background: "#fafafd" }}
-          />
+          <img alt="Cellphone Towers" className="w-full max-h-72 object-contain mb-6 rounded-lg shadow-md" style={{
+          background: "#fafafd"
+        }} src="/lovable-uploads/eb5a4d34-acfd-48b4-a579-7354ee30c5c9.jpg" />
           <p className="mb-6 text-lg text-gray-800">
             Over the years, we have evolved with the changing landscape of technology and infrastructure, yet our core remains rooted in quality, innovation, and a forward-thinking approach.
           </p>
@@ -31,16 +25,11 @@ const Vodafone: React.FC = () => (
           </p>
         </div>
         <div className="flex justify-end mt-8">
-          <Link
-            to="/portfolio"
-            className="inline-block bg-primary text-white px-6 py-2 rounded hover:bg-secondary shadow transition"
-          >
+          <Link to="/portfolio" className="inline-block bg-primary text-white px-6 py-2 rounded hover:bg-secondary shadow transition">
             Back to Portfolio
           </Link>
         </div>
       </div>
     </section>
-  </MainLayout>
-);
-
+  </MainLayout>;
 export default Vodafone;
