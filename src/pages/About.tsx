@@ -78,7 +78,7 @@ const About: React.FC = () => {
               <div className="flex justify-center">
                 <div className="text-center reveal-on-scroll">
                   <div className="w-48 h-48 rounded-full bg-gray-300 mx-auto mb-4"></div>
-                  <h3 className="text-xl font-semibold font-poppins">Sri Suresh Maddineni</h3>
+                  <h3 className="text-xl font-semibold font-poppins">Sri Suresh Madineni</h3>
                   <p className="text-gray-600">Founder & CEO</p>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Phone } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -38,10 +38,15 @@ const Footer: React.FC = () => {
               Vision Developers<br />
               #7-24-9/5, #506, Dutch House,<br />
               Kirlampudi Layout, Visakhapatnam - 530017.<br />
-              <a href="mailto:info@visiondevelopers.co" className="hover:text-accent transition-colors duration-300">info@visiondevelopers.co</a>
+              <a href="mailto:info@visiondevelopers.co" className="text-accent hover:text-accent/80 transition-colors duration-300 block mt-2">
+                info@visiondevelopers.co
+              </a>
+              <a href="tel:+919988393555" className="text-accent hover:text-accent/80 transition-colors duration-300 block">
+                +91 9988393555
+              </a>
             </address>
           </div>
-
+          
           {/* Column 3: Quick Links */}
           <div className="space-y-6">
             <h3 className="text-xl md:text-2xl font-semibold mb-6 font-poppins">Quick Links</h3>
@@ -74,14 +79,14 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           
-          {/* Column 4: Contact */}
+          {/* Column 4: Call Us */}
           <div className="space-y-6">
-            <h3 className="text-xl md:text-2xl font-semibold mb-6 font-poppins">Contact</h3>
-            <a href="mailto:info@visiondevelopers.co" className="text-gray-300 hover:text-accent transition-colors duration-300 text-base md:text-lg block mb-4">
-              info@visiondevelopers.co
-            </a>
-            <a href="tel:+919988393555" className="text-gray-300 hover:text-accent transition-colors duration-300 text-base md:text-lg flex items-center">
-              <Phone size={18} className="mr-2" />
+            <h3 className="text-xl md:text-2xl font-semibold mb-6 font-poppins">Call Us</h3>
+            <div className="flex items-center space-x-3 mb-3">
+              <Phone size={22} className="text-accent" />
+              <p className="text-base md:text-lg text-gray-300">Available 24x7</p>
+            </div>
+            <a href="tel:+919988393555" className="text-white hover:text-accent text-xl md:text-2xl font-semibold transition-colors duration-300">
               +91 9988393555
             </a>
           </div>

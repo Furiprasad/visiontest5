@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -32,7 +33,7 @@ const ProjectsSection: React.FC = () => {
       name: "Aditya Gold & Platinum",
       type: "Residential",
       area: "45,000 Sq.ft",
-      image: "/lovable-uploads/82f38494-b10b-45c7-97e9-fc04693bd39e.png",
+      image: "/lovable-uploads/c72bf87e-6d73-4667-beb8-4e189b70fb1e.png",
       status: "Completed",
       description: "Bespoke development of 20 luxury apartments with premium amenities and scenic views."
     },
@@ -41,9 +42,9 @@ const ProjectsSection: React.FC = () => {
       name: "Blue Horizon",
       type: "Residential",
       area: "40,000 Sq.ft",
-      image: "/lovable-uploads/22305701-edc3-4d22-8599-f2f46565e666.png",
-      status: "Under Construction",
-      description: "Modern residential complex featuring contemporary designs."
+      image: "/lovable-uploads/8a16c7d1-8f7f-4f81-8c3f-0daec9b20438.png",
+      status: "Completed",
+      description: "Modern residential complex featuring contemporary design and sustainable building practices."
     }
   ];
 
@@ -59,8 +60,8 @@ const ProjectsSection: React.FC = () => {
           {projects.map((project) => (
             <div 
               key={project.id} 
-              className="relative overflow-hidden rounded-xl shadow-lg h-[500px] cursor-pointer reveal-on-scroll"
-              onClick={() => navigate(`/project/${project.id}`)}
+              className="relative overflow-hidden rounded-xl shadow-lg h-[400px] md:h-[500px] cursor-pointer reveal-on-scroll"
+              onClick={() => navigate(`/projects/${project.id}`)}
             >
               <img 
                 src={project.image} 
@@ -72,13 +73,13 @@ const ProjectsSection: React.FC = () => {
                 <p className="text-base md:text-lg mb-4">Area: {project.area}</p>
                 <p className="text-base md:text-lg mb-4">Type: {project.type}</p>
                 <p className="text-base md:text-lg mb-4">Status: {project.status}</p>
-                <p className="text-base md:text-lg mb-6">{project.description}</p>
+                <p className="text-base md:text-lg mb-6">Description: {project.description}</p>
                 <Button
                   size="lg"
                   variant="outline"
                   className="bg-transparent border-white text-white hover:bg-white hover:text-primary text-lg py-6 px-8"
                 >
-                  Read More
+                  View Project
                 </Button>
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-6">

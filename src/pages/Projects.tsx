@@ -1,10 +1,8 @@
+
 import React, { useEffect } from 'react';
 import MainLayout from '../layouts/MainLayout';
-import { useNavigate } from 'react-router-dom';
 
 const Projects: React.FC = () => {
-  const navigate = useNavigate();
-  
   useEffect(() => {
     window.scrollTo(0, 0);
     
@@ -33,7 +31,7 @@ const Projects: React.FC = () => {
       name: "Aditya Gold & Platinum",
       type: "Residential",
       area: "45,000 Sq.ft",
-      image: "/lovable-uploads/e347d401-e4bc-4c4b-8030-fe3d9ada5769.png",
+      image: "/lovable-uploads/5e90ec59-eb61-4111-8349-0c5783d63349.png",
       status: "Completed",
       description: "Bespoke development of 20 luxury apartments with premium amenities and scenic views."
     },
@@ -42,14 +40,33 @@ const Projects: React.FC = () => {
       name: "Blue Horizon",
       type: "Residential",
       area: "40,000 Sq.ft",
-      image: "/lovable-uploads/5d274375-4863-48ca-887a-91758d283585.png",
-      status: "Under Construction",
-      description: "Modern residential complex featuring contemporary designs."
+      image: "/lovable-uploads/69ad697d-6e68-4911-a83d-8d2833104d02.png",
+      status: "Completed",
+      description: "Modern residential complex featuring contemporary design and sustainable building practices."
+    },
+    {
+      id: 3,
+      name: "Urban Square",
+      type: "Commercial",
+      area: "60,000 Sq.ft",
+      image: "/lovable-uploads/4fe120fb-d1f3-43d9-9545-35d1dee61713.png",
+      status: "In Progress",
+      description: "Mixed-use development combining office spaces, retail outlets, and recreational facilities."
+    },
+    {
+      id: 4,
+      name: "Green Valley Residences",
+      type: "Residential",
+      area: "38,000 Sq.ft",
+      image: "/lovable-uploads/0117bda7-81b6-4e64-9372-e67e72e4284f.png",
+      status: "Upcoming",
+      description: "Eco-friendly residential complex with green spaces and energy-efficient design."
     }
   ];
   
   return (
     <MainLayout>
+      {/* Header Banner */}
       <section className="relative py-20 md:py-28 bg-primary">
         <div className="container mx-auto px-4 text-center text-white">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 font-poppins">Our Projects</h1>
@@ -57,6 +74,7 @@ const Projects: React.FC = () => {
         </div>
       </section>
 
+      {/* Project Categories */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -99,6 +117,7 @@ const Projects: React.FC = () => {
         </div>
       </section>
 
+      {/* Project Listings */}
       <section className="section-padding">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-12 font-poppins text-center reveal-on-scroll">Featured Projects</h2>
@@ -113,7 +132,7 @@ const Projects: React.FC = () => {
                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 ${
                     project.status === 'Completed' 
                       ? 'bg-green-100 text-green-800' 
-                      : project.status === 'Under Construction'
+                      : project.status === 'In Progress'
                         ? 'bg-blue-100 text-blue-800'
                         : 'bg-amber-100 text-amber-800'
                   }`}>
@@ -131,18 +150,15 @@ const Projects: React.FC = () => {
                     </div>
                   </div>
                   <p className="text-gray-700 mb-6">{project.description}</p>
-                  <button 
-                    className="px-6 py-2 bg-primary text-white hover:bg-primary/90 transition rounded"
-                    onClick={() => navigate(`/project/${project.id}`)}
-                  >
-                    Read More
+                  <button className="px-6 py-2 bg-primary text-white hover:bg-primary/90 transition rounded">
+                    View Details
                   </button>
                 </div>
-                <div className="order-1 md:order-none overflow-hidden rounded-lg h-[300px] md:h-[400px]">
+                <div className="order-1 md:order-none overflow-hidden rounded-lg">
                   <img 
                     src={project.image} 
                     alt={project.name} 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
                   />
                 </div>
               </div>

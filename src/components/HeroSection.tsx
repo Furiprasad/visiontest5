@@ -8,27 +8,18 @@ const HeroSection: React.FC = () => {
     }
   ];
 
-  // The aspect ratio of the image is 2560 / 975 ≈ 2.62
-  // We will use a padding-top trick to maintain aspect ratio for responsive images.
-  // On mobile, the container height will match the scaled image height perfectly.
-
   return (
-    <section className="relative w-full overflow-hidden bg-gray-100" style={{ paddingTop: '38.16%' }}>
-      {/* paddingTop = (975 / 2560)*100% = 38.16% for height proportional to width */}
-
-      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+    <section className="relative w-full h-[40vh] md:h-[60vh] lg:h-[80vh] overflow-hidden">
+      <div className="relative w-full h-full">
         {slides.map((slide, index) => (
-          <div
+          <div 
             key={index}
-            className="w-full h-full"
+            className="absolute inset-0 w-full h-full"
           >
-            <img
-              src={slide.image}
-              alt="Vision Developers Hero"
-              className="w-full h-full object-cover"
-              style={{
-                display: 'block'
-              }}
+            <img 
+              src={slide.image} 
+              alt="Vision Developers Hero" 
+              className="w-full h-full object-cover object-center"
             />
           </div>
         ))}
@@ -38,4 +29,3 @@ const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
-
