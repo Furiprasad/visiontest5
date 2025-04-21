@@ -1,10 +1,7 @@
-
 import React from "react";
 import MainLayout from "../../layouts/MainLayout";
 import { Link } from "react-router-dom";
-
-const EastCoastRailways: React.FC = () => (
-  <MainLayout>
+const EastCoastRailways: React.FC = () => <MainLayout>
     <section className="section-padding bg-white">
       <div className="container mx-auto max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-bold font-poppins mb-8 text-primary">
@@ -17,23 +14,16 @@ const EastCoastRailways: React.FC = () => (
               Vision Developers, formerly known as Aditya Technocrats, is a trusted name in infrastructure and civil engineering. Since our founding in 2002, we have been instrumental in executing key infrastructure projects, particularly in the East Coast Railways sector.
             </p>
           </div>
-          <img
-            src="/lovable-uploads/6d6203ba-c25b-4cab-ae1e-c56accffcecd.png"
-            alt="Train"
-            className="w-full md:w-72 h-48 object-cover rounded-lg shadow-md"
-            style={{ maxWidth: 300 }}
-          />
+          <img alt="Train" className="w-full md:w-72 h-48 object-cover rounded-lg shadow-md" style={{
+          maxWidth: 300
+        }} src="/lovable-uploads/53235b8b-8061-4fb7-83f8-0c8063ac0bf2.jpg" />
         </div>
 
         <div className="mb-8">
           <p className="mb-6 text-lg text-gray-800">
             With a proven track record in constructing durable railway bridges, culverts, and various civil structures, we take pride in our contribution to building the backbone of regional connectivity. Every project we deliver reflects our commitment to quality, innovation, and long-term value.
           </p>
-          <img
-            src="/lovable-uploads/56ddeef1-bbe5-4f6c-982d-374de4fa1d04.png"
-            alt="Railway Bridge"
-            className="w-full max-h-64 object-cover mb-4 rounded-lg shadow"
-          />
+          <img alt="Railway Bridge" className="w-full max-h-64 object-cover mb-4 rounded-lg shadow" src="/lovable-uploads/dc94b3fe-f86c-4033-a980-acb31b8e449b.jpg" />
         </div>
         <div className="mb-8">
           <p className="mb-4 text-lg text-gray-800">
@@ -44,16 +34,11 @@ const EastCoastRailways: React.FC = () => (
           </p>
         </div>
         <div className="flex justify-end mt-8">
-          <Link
-            to="/portfolio"
-            className="inline-block bg-primary text-white px-6 py-2 rounded hover:bg-secondary shadow transition"
-          >
+          <Link to="/portfolio" className="inline-block bg-primary text-white px-6 py-2 rounded hover:bg-secondary shadow transition">
             Back to Portfolio
           </Link>
         </div>
       </div>
     </section>
-  </MainLayout>
-);
-
+  </MainLayout>;
 export default EastCoastRailways;
