@@ -42,7 +42,7 @@ const Portfolio: React.FC = () => <MainLayout>
           {portfolioItems.map(item => <div key={item.id} className="relative rounded-xl shadow-lg overflow-hidden bg-white group transition transform hover:scale-[1.03] hover:shadow-xl">
               <img src={item.image} alt={item.alt} loading="lazy" className="w-full h-64 bg-gray-50 object-cover" />
               <div className="absolute bottom-0 right-0 p-3">
-                <Link to={item.link} className="inline-block bg-primary text-white text-sm px-4 py-2 rounded shadow hover:bg-secondary transition font-semibold">
+                <Link to={item.link} className="inline-block bg-primary text-white text-sm rounded shadow hover:bg-secondary transition font-semibold mx-0 px-[50px] my-0 py-[5px]">
                   View More...
                 </Link>
               </div>
