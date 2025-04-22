@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import MainLayout from '../layouts/MainLayout';
 import { Input } from '@/components/ui/input';
@@ -90,8 +89,8 @@ const Contact: React.FC = () => {
               </div>
               <h3 className="text-lg font-semibold mb-2 font-poppins">Office Hours</h3>
               <p className="text-gray-600">
-                Monday - Friday: 9:00 AM - 6:00 PM<br />
-                Saturday: 10:00 AM - 2:00 PM
+                Monday - Saturday: 9:00AM to 6:00 PM<br />
+                Sunday: Holiday
               </p>
             </div>
           </div>
@@ -183,11 +182,17 @@ const Contact: React.FC = () => {
                 We're located in the heart of Visakhapatnam. Feel free to visit our office during business hours.
               </p>
               
-              <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
-                {/* This would be replaced with an actual map integration */}
-                <div className="w-full h-full flex items-center justify-center bg-gray-200">
-                  <p className="text-gray-500">Map placeholder - would integrate Google Maps here</p>
-                </div>
+              <div className="aspect-video w-full rounded-lg overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.0657707833793!2d83.30976799999999!3d17.7415399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3943e78e23e907%3A0xddb7a1ef64b5f256!2sFuri%20Media%20Services!5e0!3m2!1sen!2sin!4v1745297394803!5m2!1sen!2sin!4v1745297394803!5m2!1sen!2sin"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                ></iframe>
               </div>
             </div>
           </div>
