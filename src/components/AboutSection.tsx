@@ -39,7 +39,7 @@ const AboutSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch mb-20">
-          <div className="reveal-on-scroll h-full">
+          <div className="reveal-on-scroll h-[600px]">
             <img 
               src="/lovable-uploads/de3e986a-4aaf-4274-a9c0-71292e9d15a4.png" 
               alt="About Vision Developers" 

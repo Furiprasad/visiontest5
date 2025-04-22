@@ -33,7 +33,7 @@ const ProjectsSection: React.FC = () => {
       name: "Aditya Gold & Platinum",
       type: "Residential",
       area: "45,000 Sq.ft",
-      image: "/lovable-uploads/c72bf87e-6d73-4667-beb8-4e189b70fb1e.png",
+      image: "/lovable-uploads/c2d6fa11-e744-47ba-98b5-8319b18ef42b.png",
       status: "Completed",
       description: "Bespoke development of 20 luxury apartments with premium amenities and scenic views."
     },
@@ -42,7 +42,7 @@ const ProjectsSection: React.FC = () => {
       name: "Blue Horizon",
       type: "Residential",
       area: "40,000 Sq.ft",
-      image: "/lovable-uploads/8a16c7d1-8f7f-4f81-8c3f-0daec9b20438.png",
+      image: "/lovable-uploads/2c2f9820-4a45-417f-9e52-0aac94092dc8.png",
       status: "Completed",
       description: "Modern residential complex featuring contemporary design and sustainable building practices."
     }
