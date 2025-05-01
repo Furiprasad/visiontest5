@@ -41,9 +41,6 @@ const Footer: React.FC = () => {
               <a href="mailto:info@visiondevelopers.co" className="text-accent hover:text-accent/80 transition-colors duration-300 block mt-2">
                 info@visiondevelopers.co
               </a>
-              <a href="tel:+919988393555" className="text-accent hover:text-accent/80 transition-colors duration-300 block">
-                +91 9988393555
-              </a>
             </address>
           </div>
           
