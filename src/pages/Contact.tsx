@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import MainLayout from '../layouts/MainLayout';
 import { Input } from '@/components/ui/input';
@@ -184,7 +185,7 @@ const Contact: React.FC = () => {
               
               <div className="aspect-video w-full rounded-lg overflow-hidden">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.0657707833793!2d83.30976799999999!3d17.7415399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3943e78e23e907%3A0xddb7a1ef64b5f256!2sFuri%20Media%20Services!5e0!3m2!1sen!2sin!4v1745297394803!5m2!1sen!2sin!4v1745297394803!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d121615.86560001959!2d83.335027!3d17.721263!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3943b795463a99%3A0xb503dc7832f4bb94!2sDutch%20House%20Apartment%20(Kirlampudi%20layout)!5e0!3m2!1sen!2sus!4v1746095881580!5m2!1sen!2sus" 
                   width="100%"
                   height="450"
                   style={{ border: 0 }}

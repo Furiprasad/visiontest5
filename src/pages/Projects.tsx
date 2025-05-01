@@ -31,7 +31,7 @@ const Projects: React.FC = () => {
     area: "45,000 Sq.ft",
     image: "/lovable-uploads/f355db18-0121-4ef2-a413-139a9392dc29.png",
     link: "/projects/aditya-gold-platinum",
-    status: "Under Construction",
+    status: "Completed",
     description: "Bespoke development of 20 luxury apartments with premium amenities and scenic views."
   }, {
     id: 2,
@@ -40,7 +40,7 @@ const Projects: React.FC = () => {
     area: "40,000 Sq.ft",
     image: "/lovable-uploads/a8449454-7955-4944-b12f-3756ccbdbf9f.png",
     link: "/projects/blue-horizon",
-    status: "Under Construction",
+    status: "Completed",
     description: "Modern residential complex featuring contemporary design and sustainable building practices."
   }];
 
