@@ -19,8 +19,8 @@ const AndhraPradesh: React.FC = () => (
           <img
             src="/lovable-uploads/05668241-197f-4dac-891b-034a3ee77c0b.png"
             alt="School Project"
-            className="w-full md:w-72 h-48 object-cover rounded-lg shadow"
-            style={{ maxWidth: 320 }}
+            className="w-full md:w-full h-auto object-cover rounded-lg shadow"
+            style={{ maxWidth: 480 }}
           />
         </div>
         <div className="mb-8">
