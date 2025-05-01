@@ -33,8 +33,9 @@ const ProjectsSection: React.FC = () => {
       name: "Aditya Gold & Platinum",
       type: "Residential",
       area: "45,000 Sq.ft",
-      image: "/lovable-uploads/c2d6fa11-e744-47ba-98b5-8319b18ef42b.png",
-      status: "Completed",
+      image: "/lovable-uploads/f355db18-0121-4ef2-a413-139a9392dc29.png",
+      link: "/projects/aditya-gold-platinum",
+      status: "Under Construction",
       description: "Bespoke development of 20 luxury apartments with premium amenities and scenic views."
     },
     {
@@ -42,8 +43,9 @@ const ProjectsSection: React.FC = () => {
       name: "Blue Horizon",
       type: "Residential",
       area: "40,000 Sq.ft",
-      image: "/lovable-uploads/2c2f9820-4a45-417f-9e52-0aac94092dc8.png",
-      status: "Completed",
+      image: "/lovable-uploads/a8449454-7955-4944-b12f-3756ccbdbf9f.png",
+      link: "/projects/blue-horizon",
+      status: "Under Construction",
       description: "Modern residential complex featuring contemporary design and sustainable building practices."
     }
   ];
@@ -61,7 +63,7 @@ const ProjectsSection: React.FC = () => {
             <div 
               key={project.id} 
               className="relative overflow-hidden rounded-xl shadow-lg h-[400px] md:h-[500px] cursor-pointer reveal-on-scroll"
-              onClick={() => navigate(`/projects/${project.id}`)}
+              onClick={() => navigate(project.link)}
             >
               <img 
                 src={project.image} 

@@ -14,6 +14,8 @@ import EastCoastRailways from "./pages/projects/EastCoastRailways";
 import Piaggio from "./pages/projects/Piaggio";
 import Vodafone from "./pages/projects/Vodafone";
 import AndhraPradesh from "./pages/projects/AndhraPradesh";
+import AdityaGoldPlatinum from "./pages/projects/AdityaGoldPlatinum";
+import BlueHorizon from "./pages/projects/BlueHorizon";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +34,8 @@ const App = () => (
           <Route path="/projects/piaggio" element={<Piaggio />} />
           <Route path="/projects/vodafone" element={<Vodafone />} />
           <Route path="/projects/andhra-pradesh" element={<AndhraPradesh />} />
+          <Route path="/projects/aditya-gold-platinum" element={<AdityaGoldPlatinum />} />
+          <Route path="/projects/blue-horizon" element={<BlueHorizon />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

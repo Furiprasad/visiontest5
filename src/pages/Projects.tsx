@@ -1,5 +1,10 @@
+
 import React, { useEffect } from 'react';
 import MainLayout from '../layouts/MainLayout';
+import { Button } from "@/components/ui/button";
+import { Link } from 'react-router-dom';
+import { Card, CardContent } from "@/components/ui/card";
+
 const Projects: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -18,40 +23,29 @@ const Projects: React.FC = () => {
       elements.forEach(el => observer.unobserve(el));
     };
   }, []);
+
   const projects = [{
     id: 1,
     name: "Aditya Gold & Platinum",
     type: "Residential",
     area: "45,000 Sq.ft",
-    image: "/lovable-uploads/5e90ec59-eb61-4111-8349-0c5783d63349.png",
-    status: "Completed",
+    image: "/lovable-uploads/f355db18-0121-4ef2-a413-139a9392dc29.png",
+    link: "/projects/aditya-gold-platinum",
+    status: "Under Construction",
     description: "Bespoke development of 20 luxury apartments with premium amenities and scenic views."
   }, {
     id: 2,
     name: "Blue Horizon",
     type: "Residential",
     area: "40,000 Sq.ft",
-    image: "/lovable-uploads/69ad697d-6e68-4911-a83d-8d2833104d02.png",
-    status: "Completed",
+    image: "/lovable-uploads/a8449454-7955-4944-b12f-3756ccbdbf9f.png",
+    link: "/projects/blue-horizon",
+    status: "Under Construction",
     description: "Modern residential complex featuring contemporary design and sustainable building practices."
-  }, {
-    id: 3,
-    name: "Urban Square",
-    type: "Commercial",
-    area: "60,000 Sq.ft",
-    image: "/lovable-uploads/4fe120fb-d1f3-43d9-9545-35d1dee61713.png",
-    status: "In Progress",
-    description: "Mixed-use development combining office spaces, retail outlets, and recreational facilities."
-  }, {
-    id: 4,
-    name: "Green Valley Residences",
-    type: "Residential",
-    area: "38,000 Sq.ft",
-    image: "/lovable-uploads/0117bda7-81b6-4e64-9372-e67e72e4284f.png",
-    status: "Upcoming",
-    description: "Eco-friendly residential complex with green spaces and energy-efficient design."
   }];
-  return <MainLayout>
+
+  return (
+    <MainLayout>
       {/* Header Banner */}
       <section className="relative py-20 md:py-28 bg-primary">
         <div className="container mx-auto px-4 text-center text-white">
@@ -105,12 +99,44 @@ const Projects: React.FC = () => {
 
       {/* Project Listings */}
       <section className="section-padding">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 font-poppins text-center reveal-on-scroll">Featured Projects</h2>
           
-          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {projects.map((project) => (
+              <Card 
+                key={project.id}
+                className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow reveal-on-scroll"
+              >
+                <div className="relative h-72">
+                  <img 
+                    src={project.image} 
+                    alt={project.name} 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 className="text-white text-xl font-semibold">{project.name}</h3>
+                    <p className="text-white/80">{project.type} | {project.area}</p>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                      {project.status}
+                    </span>
+                  </div>
+                  <p className="text-gray-600 mb-6">{project.description}</p>
+                  <Link to={project.link}>
+                    <Button className="w-full" variant="outline">View Project Details</Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
-    </MainLayout>;
+    </MainLayout>
+  );
 };
+
 export default Projects;
