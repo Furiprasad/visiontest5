@@ -1,9 +1,9 @@
-
 import React, { useEffect } from 'react';
 import MainLayout from '../layouts/MainLayout';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
+import FlatCalendarView from '../components/FlatCalendarView';
 
 const Projects: React.FC = () => {
   useEffect(() => {
@@ -43,6 +43,9 @@ const Projects: React.FC = () => {
     status: "Under Construction",
     description: "Modern residential complex featuring contemporary design and sustainable building practices."
   }];
+
+  // CSV data URL for flat availability
+  const csvDataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQrAClJ9aihJneqUeW81--i2diw81Tph9tfdwSZzi7zy2m69pMb81Z8S4dNi7dvzj_nBwqIvNfKg6ou/pub?output=csv";
 
   return (
     <MainLayout>
@@ -136,20 +139,13 @@ const Projects: React.FC = () => {
         </div>
       </section>
 
-      {/* Google Sheet Embed Section */}
+      {/* Flat Calendar Section */}
       <section className="section-padding pt-0">
         <div className="container mx-auto px-4">
           <div className="w-full max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 font-poppins text-center reveal-on-scroll">Flat Availability</h2>
-            <div className="w-full rounded-xl shadow-md overflow-hidden reveal-on-scroll">
-              <iframe 
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQrAClJ9aihJneqUeW81--i2diw81Tph9tfdwSZzi7zy2m69pMb81Z8S4dNi7dvzj_nBwqIvNfKg6ou/pubhtml?widget=false&headers=false&rm=minimal" 
-                width="100%" 
-                height="600" 
-                className="border-0 w-full rounded-xl"
-                title="Flat Availability Sheet"
-                loading="lazy"
-              ></iframe>
+            <h2 className="text-3xl font-bold mb-12 font-poppins text-center reveal-on-scroll">Flat Availability Calendar</h2>
+            <div className="reveal-on-scroll">
+              <FlatCalendarView csvUrl={csvDataUrl} />
             </div>
           </div>
         </div>

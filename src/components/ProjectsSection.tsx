@@ -1,8 +1,8 @@
-
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import FlatCalendarView from './FlatCalendarView';
 
 const ProjectsSection: React.FC = () => {
   const navigate = useNavigate();
@@ -50,8 +50,8 @@ const ProjectsSection: React.FC = () => {
     }
   ];
 
-  // Google Sheet URL
-  const googleSheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQrAClJ9aihJneqUeW81--i2diw81Tph9tfdwSZzi7zy2m69pMb81Z8S4dNi7dvzj_nBwqIvNfKg6ou/pubhtml?widget=false&headers=false&rm=minimal";
+  // CSV data URL for flat availability
+  const csvDataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQrAClJ9aihJneqUeW81--i2diw81Tph9tfdwSZzi7zy2m69pMb81Z8S4dNi7dvzj_nBwqIvNfKg6ou/pub?output=csv";
 
   return (
     <section className="section-padding bg-gray-50">
@@ -108,17 +108,8 @@ const ProjectsSection: React.FC = () => {
         </div>
         
         <div className="reveal-on-scroll">
-          <h3 className="text-2xl md:text-3xl font-bold mb-8 font-poppins text-center">Flat Availability</h3>
-          <div className="w-full rounded-xl shadow-md overflow-hidden">
-            <iframe 
-              src={googleSheetUrl} 
-              width="100%" 
-              height="600" 
-              className="border-0 w-full rounded-xl"
-              title="Flat Availability Sheet"
-              loading="lazy"
-            ></iframe>
-          </div>
+          <h3 className="text-2xl md:text-3xl font-bold mb-8 font-poppins text-center">Flat Availability Calendar</h3>
+          <FlatCalendarView csvUrl={csvDataUrl} />
         </div>
       </div>
     </section>
