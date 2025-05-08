@@ -1,9 +1,9 @@
-
 import React, { useEffect } from 'react';
 import MainLayout from '../layouts/MainLayout';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
+import FlatAvailability from '../components/FlatAvailability';
 
 const Projects: React.FC = () => {
   useEffect(() => {
@@ -43,6 +43,9 @@ const Projects: React.FC = () => {
     status: "Under Construction",
     description: "Modern residential complex featuring contemporary design and sustainable building practices."
   }];
+
+  // CSV data URL - replace with your actual published CSV URL
+  const csvDataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQxUXK78Yy3DclbjSarZTUzSFZ9Eew25SYzMTrFiJzMnkUJ9N9QULXvDYVb1CQrRAPBKlikCUfwZi6V/pub?gid=0&single=true&output=csv";
 
   return (
     <MainLayout>
@@ -132,6 +135,16 @@ const Projects: React.FC = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Flat Availability Section */}
+      <section className="section-padding pt-0">
+        <div className="container mx-auto px-4">
+          <div className="w-full max-w-7xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 font-poppins text-center reveal-on-scroll">Flat Availability</h2>
+            <FlatAvailability csvUrl={csvDataUrl} />
           </div>
         </div>
       </section>

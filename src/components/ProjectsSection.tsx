@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import FlatAvailability from './FlatAvailability';
 
 const ProjectsSection: React.FC = () => {
   const navigate = useNavigate();
@@ -50,6 +51,9 @@ const ProjectsSection: React.FC = () => {
     }
   ];
 
+  // CSV data URL - replace with your actual published CSV URL
+  const csvDataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQxUXK78Yy3DclbjSarZTUzSFZ9Eew25SYzMTrFiJzMnkUJ9N9QULXvDYVb1CQrRAPBKlikCUfwZi6V/pub?gid=0&single=true&output=csv";
+
   return (
     <section className="section-padding bg-gray-50">
       <div className="container mx-auto max-w-7xl">
@@ -92,7 +96,7 @@ const ProjectsSection: React.FC = () => {
           ))}
         </div>
 
-        <div className="text-center reveal-on-scroll">
+        <div className="text-center reveal-on-scroll mb-16">
           <Button 
             onClick={() => navigate('/projects')}
             variant="outline"
@@ -102,6 +106,11 @@ const ProjectsSection: React.FC = () => {
             See All Projects
             <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform"/>
           </Button>
+        </div>
+        
+        <div className="reveal-on-scroll">
+          <h3 className="text-2xl md:text-3xl font-bold mb-8 font-poppins text-center">Flat Availability</h3>
+          <FlatAvailability csvUrl={csvDataUrl} />
         </div>
       </div>
     </section>
