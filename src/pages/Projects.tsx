@@ -1,9 +1,10 @@
+
 import React, { useEffect } from 'react';
 import MainLayout from '../layouts/MainLayout';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
-import FlatCalendarView from '../components/FlatCalendarView';
+import FloorPlanView from '../components/FloorPlanView';
 
 const Projects: React.FC = () => {
   useEffect(() => {
@@ -139,13 +140,13 @@ const Projects: React.FC = () => {
         </div>
       </section>
 
-      {/* Flat Calendar Section */}
+      {/* Floor Plan Section */}
       <section className="section-padding pt-0">
         <div className="container mx-auto px-4">
           <div className="w-full max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 font-poppins text-center reveal-on-scroll">Flat Availability Calendar</h2>
+            <h2 className="text-3xl font-bold mb-12 font-poppins text-center reveal-on-scroll">Flat Availability</h2>
             <div className="reveal-on-scroll">
-              <FlatCalendarView csvUrl={csvDataUrl} />
+              <FloorPlanView csvUrl={csvDataUrl} />
             </div>
           </div>
         </div>

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Calendar } from '@/components/ui/calendar';
 import { Card, CardContent } from '@/components/ui/card';
@@ -21,6 +20,7 @@ interface FlatData {
   area: string;
   status: "Available" | "Sold";
   price?: string;
+  description?: string;
 }
 
 const FlatCalendarView: React.FC<{ csvUrl: string }> = ({ csvUrl }) => {
@@ -75,6 +75,7 @@ const FlatCalendarView: React.FC<{ csvUrl: string }> = ({ csvUrl }) => {
           area: entry.area || "",
           status: (entry.status?.toLowerCase() === "sold" ? "Sold" : "Available") as "Available" | "Sold",
           price: entry.price || "",
+          description: entry.description || "",
         };
       });
   };
@@ -182,7 +183,7 @@ const FlatCalendarView: React.FC<{ csvUrl: string }> = ({ csvUrl }) => {
               components={{
                 DayContent: (props) => (
                   <div className="relative w-full h-full flex items-center justify-center">
-                    <div>{props.day}</div>
+                    <div>{props.date?.getDate()}</div>
                     {props.date && renderCalendarDay(props.date)}
                   </div>
                 ),

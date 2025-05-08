@@ -1,8 +1,9 @@
+
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import FlatCalendarView from './FlatCalendarView';
+import FloorPlanView from './FloorPlanView';
 
 const ProjectsSection: React.FC = () => {
   const navigate = useNavigate();
@@ -108,8 +109,8 @@ const ProjectsSection: React.FC = () => {
         </div>
         
         <div className="reveal-on-scroll">
-          <h3 className="text-2xl md:text-3xl font-bold mb-8 font-poppins text-center">Flat Availability Calendar</h3>
-          <FlatCalendarView csvUrl={csvDataUrl} />
+          <h3 className="text-2xl md:text-3xl font-bold mb-8 font-poppins text-center">Flat Availability</h3>
+          <FloorPlanView csvUrl={csvDataUrl} />
         </div>
       </div>
     </section>
