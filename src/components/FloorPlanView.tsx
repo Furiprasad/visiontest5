@@ -96,14 +96,14 @@ const FloorPlanView: React.FC<FloorPlanViewProps> = ({ adityaUrl, blueUrl }) => 
     
     return (
       <div className="flex-1 min-w-[250px]">
-        <h3 className="text-xl md:text-2xl font-bold text-center mb-4">{title}</h3>
+        <h3 className="text-xl md:text-2xl font-bold text-center mb-6">{title}</h3>
         
         {Object.entries(groupedFlats)
           .sort(([a], [b]) => b.localeCompare(a)) // Sort floors in descending order
           .map(([floor, flats]) => (
             <div key={floor} className="flex items-center mb-3">
               <div className="font-bold w-8">{floor}</div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 justify-center mx-auto">
                 {flats.map((flat, idx) => (
                   <div 
                     key={idx}
@@ -141,7 +141,7 @@ const FloorPlanView: React.FC<FloorPlanViewProps> = ({ adityaUrl, blueUrl }) => 
 
   return (
     <div className="w-full" id="floorplans">
-      <div className="flex flex-wrap gap-8">
+      <div className="flex flex-col md:flex-row gap-8">
         {renderProject("Aditya Gold", adityaData)}
         {renderProject("Blue Horizon", blueData)}
       </div>
