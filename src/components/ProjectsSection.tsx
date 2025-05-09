@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -52,7 +51,7 @@ const ProjectsSection: React.FC = () => {
   ];
 
   // CSV data URL for flat availability
-  const csvDataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQrAClJ9aihJneqUeW81--i2diw81Tph9tfdwSZzi7zy2m69pMb81Z8S4dNi7dvzj_nBwqIvNfKg6ou/pub?output=csv";
+  const csvDataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT0dA3CUrK_jkKJl35ToYh_CeUuCfLzwd5PAJVErjn0etMGdVDUti0tiJ0ex37UqE8MFpHQmDcE2KTL/pub?output=csv";
 
   return (
     <section className="section-padding bg-gray-50">
