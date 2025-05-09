@@ -44,8 +44,9 @@ const Projects: React.FC = () => {
     description: "Modern residential complex featuring contemporary design and sustainable building practices."
   }];
 
-  // CSV data URL for flat availability
-  const csvDataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT0dA3CUrK_jkKJl35ToYh_CeUuCfLzwd5PAJVErjn0etMGdVDUti0tiJ0ex37UqE8MFpHQmDcE2KTL/pub?output=csv";
+  // CSV data URLs for flat availability
+  const adityaCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT0dA3CUrK_jkKJl35ToYh_CeUuCfLzwd5PAJVErjn0etMGdVDUti0tiJ0ex37UqE8MFpHQmDcE2KTL/pub?output=csv";
+  const blueCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQsGdcKTTzQbaF-RqphoV2ebirtGqoB0OGYNB2XChh3ofBDl5pn11J86rhaVqVBIdPXqq0i3n63yJMv/pub?output=csv";
 
   return (
     <MainLayout>
@@ -145,7 +146,7 @@ const Projects: React.FC = () => {
           <div className="w-full max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold mb-12 font-poppins text-center reveal-on-scroll">Flat Availability</h2>
             <div className="reveal-on-scroll">
-              <FloorPlanView csvUrl={csvDataUrl} />
+              <FloorPlanView adityaUrl={adityaCsvUrl} blueUrl={blueCsvUrl} />
             </div>
           </div>
         </div>

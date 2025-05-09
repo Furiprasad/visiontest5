@@ -50,8 +50,9 @@ const ProjectsSection: React.FC = () => {
     }
   ];
 
-  // CSV data URL for flat availability
-  const csvDataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT0dA3CUrK_jkKJl35ToYh_CeUuCfLzwd5PAJVErjn0etMGdVDUti0tiJ0ex37UqE8MFpHQmDcE2KTL/pub?output=csv";
+  // CSV data URLs for flat availability
+  const adityaCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT0dA3CUrK_jkKJl35ToYh_CeUuCfLzwd5PAJVErjn0etMGdVDUti0tiJ0ex37UqE8MFpHQmDcE2KTL/pub?output=csv";
+  const blueCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQsGdcKTTzQbaF-RqphoV2ebirtGqoB0OGYNB2XChh3ofBDl5pn11J86rhaVqVBIdPXqq0i3n63yJMv/pub?output=csv";
 
   return (
     <section className="section-padding bg-gray-50">
@@ -109,7 +110,7 @@ const ProjectsSection: React.FC = () => {
         
         <div className="reveal-on-scroll">
           <h3 className="text-2xl md:text-3xl font-bold mb-8 font-poppins text-center">Flat Availability</h3>
-          <FloorPlanView csvUrl={csvDataUrl} />
+          <FloorPlanView adityaUrl={adityaCsvUrl} blueUrl={blueCsvUrl} />
         </div>
       </div>
     </section>
