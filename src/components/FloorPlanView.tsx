@@ -1,21 +1,21 @@
 
 import React, { useState, useEffect } from 'react';
-import { fetchCSVData } from '@/utils/csvUtils';
-import { Badge } from '@/components/ui/badge';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 
-interface FlatStatus {
+interface FlatData {
+  project: string;
   flat: string;
   status: string;
 }
 
+interface GroupedFlats {
+  [floor: string]: {
+    flat: string;
+    status: string;
+  }[];
+}
+
 const FloorPlanView: React.FC<{ csvUrl: string }> = ({ csvUrl }) => {
-  const [flats, setFlats] = useState<FlatStatus[]>([]);
+  const [projectData, setProjectData] = useState<{[project: string]: GroupedFlats}>({});
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -23,20 +23,44 @@ const FloorPlanView: React.FC<{ csvUrl: string }> = ({ csvUrl }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(csvUrl);
-        const csvText = await response.text();
+        // Fix the URL to ensure we're using a valid CSV URL
+        const csvUrlToUse = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT0dA3CUrK_jkKJl35ToYh_CeUuCfLzwd5PAJVErjn0etMGdVDUti0tiJ0ex37UqE8MFpHQmDcE2KTL/pub?output=csv";
         
-        // Parse the CSV data
-        const rows = csvText.trim().split('\n').slice(1); // Skip header
-        const parsedFlats = rows.map(row => {
-          const [flat, status] = row.split(',');
+        const response = await fetch(csvUrlToUse);
+        const text = await response.text();
+        
+        const lines = text.trim().split('\n');
+        const [header, ...rows] = lines;
+        
+        const parsedData = rows.map(line => {
+          const [project, flat, status] = line.split(',');
           return { 
-            flat: flat.trim(), 
-            status: status.trim().toLowerCase() 
+            project: project?.trim() || 'Unknown Project', 
+            flat: flat?.trim() || '', 
+            status: status?.trim().toLowerCase() || 'sold' 
           };
         });
         
-        setFlats(parsedFlats);
+        // Group by project, then by floor
+        const groupedByProject: {[project: string]: GroupedFlats} = {};
+        
+        parsedData.forEach(({ project, flat, status }) => {
+          if (!project || !flat) return;
+          
+          if (!groupedByProject[project]) {
+            groupedByProject[project] = {};
+          }
+          
+          const floor = flat[0] + 'F';
+          
+          if (!groupedByProject[project][floor]) {
+            groupedByProject[project][floor] = [];
+          }
+          
+          groupedByProject[project][floor].push({ flat, status });
+        });
+        
+        setProjectData(groupedByProject);
         setLoading(false);
       } catch (err) {
         console.error("Error fetching CSV data:", err);
@@ -46,7 +70,7 @@ const FloorPlanView: React.FC<{ csvUrl: string }> = ({ csvUrl }) => {
     };
 
     fetchData();
-    // Set up auto-refresh every 30 seconds
+    // Auto-refresh every 30 seconds
     const interval = setInterval(fetchData, 30000);
     
     return () => clearInterval(interval);
@@ -69,35 +93,34 @@ const FloorPlanView: React.FC<{ csvUrl: string }> = ({ csvUrl }) => {
   }
 
   return (
-    <div className="w-full max-w-3xl mx-auto">
-      <div className="grid grid-cols-2 gap-6 p-4">
-        {flats.map((flat, index) => (
-          <TooltipProvider key={index}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div 
-                  className={`p-6 text-center border-2 border-gray-800 rounded-lg shadow-md transition-all hover:shadow-lg 
-                    ${flat.status === 'available' ? 'bg-green-500' : 'bg-red-500'} text-white font-bold`}
-                >
-                  <span className="text-lg">{flat.flat}</span>
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <div className="p-2">
-                  <p className="font-semibold">{flat.flat}</p>
-                  <div className="mt-1">
-                    <Badge variant={flat.status === 'available' ? "outline" : "secondary"}
-                      className={`${flat.status === 'available' ? 'border-green-500 text-green-600' : 'bg-red-100 text-red-600'}`}
+    <div className="w-full" id="floorplans">
+      {Object.keys(projectData).map((project) => (
+        <div key={project} className="mb-8">
+          <h2 className="text-xl md:text-2xl font-bold mb-4">{project}</h2>
+          
+          {Object.entries(projectData[project])
+            .sort(([a], [b]) => b.localeCompare(a)) // Sort floors in descending order
+            .map(([floor, flats]) => (
+              <div key={floor} className="flex flex-wrap items-center mb-3">
+                <div className="font-bold w-12">{floor}</div>
+                <div className="flex flex-wrap gap-2">
+                  {flats.map((flat, idx) => (
+                    <div 
+                      key={idx}
+                      className={`
+                        p-3 rounded-lg w-16 text-center text-white font-medium
+                        ${flat.status === 'available' ? 'bg-green-600' : 'bg-red-600'}
+                      `}
+                      title={`${flat.flat} - ${flat.status.charAt(0).toUpperCase() + flat.status.slice(1)}`}
                     >
-                      {flat.status === 'available' ? 'Available' : 'Sold Out'}
-                    </Badge>
-                  </div>
+                      {flat.flat}
+                    </div>
+                  ))}
                 </div>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        ))}
-      </div>
+              </div>
+            ))}
+        </div>
+      ))}
     </div>
   );
 };
